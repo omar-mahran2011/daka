@@ -211,20 +211,20 @@ const DEFAULT_OFFERS=[{id:"o1",title:"خصم 25% على كل المنيو",desc:
 let menu = [], offers = [], cart = {}, orderType = 'delivery';
 let menuLoaded = false, offersLoaded = false;
 
-// Fallback: لو Firebase اتأخر أكتر من 5 ثواني، شغل المنيو الافتراضي
-const fallbackTimer = setTimeout(() => {
+// شغل المنيو الافتراضي بعد اللودر مباشرة
+setTimeout(() => {
   if (!menuLoaded) {
     menu = DEFAULT_MENU;
     renderTabs(); renderMenu(); setTimeout(setupReveal, 100);
-    document.getElementById('loader').classList.add('out');
   }
   if (!offersLoaded) {
     offers = DEFAULT_OFFERS;
     renderOffers();
   }
-}, 5000);
+  document.getElementById('loader').classList.add('out');
+}, 2200);
 
-// Listen to Firebase in real-time
+// لو Firebase رد — حدّث البيانات تلقائياً
 onValue(ref(db, 'menu'), snap => {
   menuLoaded = true;
   const val = snap.val();
