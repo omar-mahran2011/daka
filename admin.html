@@ -271,21 +271,30 @@ window.doLogout = () => {
 
 // INIT — seed default data if Firebase is empty
 async function initData() {
-  const menuSnap = await get(ref(db,'menu'));
-  if(!menuSnap.exists()) {
-    showSaving();
-    await set(ref(db,'menu'), DEFAULT_MENU);
-    await set(ref(db,'offers'), DEFAULT_OFFERS);
-    hideSaving();
-  }
-  // Listen live
+  // عرض البيانات الافتراضية فوراً
+  menu = JSON.parse(JSON.stringify(DEFAULT_MENU));
+  offers = JSON.parse(JSON.stringify(DEFAULT_OFFERS));
+  renderMenuAdm(); renderOffersAdm(); updStats();
+
+  // حاول تحط البيانات في Firebase لو فاضي
+  try {
+    const menuSnap = await get(ref(db,'menu'));
+    if(!menuSnap.exists()) {
+      showSaving();
+      await set(ref(db,'menu'), DEFAULT_MENU);
+      await set(ref(db,'offers'), DEFAULT_OFFERS);
+      hideSaving();
+    }
+  } catch(e) { console.log('Firebase seed error:', e); }
+
+  // استمع للتغييرات من Firebase
   onValue(ref(db,'menu'), snap => {
-    menu = snap.val() ? Object.values(snap.val()) : [];
-    renderMenuAdm(); updStats();
+    const val = snap.val();
+    if(val) { menu = Object.values(val); renderMenuAdm(); updStats(); }
   });
   onValue(ref(db,'offers'), snap => {
-    offers = snap.val() ? Object.values(snap.val()) : [];
-    renderOffersAdm(); updStats();
+    const val = snap.val();
+    if(val) { offers = Object.values(val); renderOffersAdm(); updStats(); }
   });
 }
 
