@@ -116,12 +116,12 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
   <div class="ld-dots"><span></span><span></span><span></span></div>
 </div>
 <header>
-  <div class="logo">كشري دقة<small>شبين الكوم — اطلب أونلاين</small></div>
+  <div class="logo">كشري دقة<small>اطلب أونلاين 🍜</small></div>
   <a href="tel:01050530505" class="hdr-btn">📞 اتصل</a>
 </header>
 <div class="hero">
   <div class="hero-badge">🔥 اطلب أونلاين دلوقتي</div>
-  <h2>أحلى كشري<br>في شبين</h2>
+  <h2>أحلى كشري<br>في مصر 🇪🇬</h2>
   <div class="hero-sub">طازج ⚡ سريع ⚡ بيوصلك على بابك</div>
 </div>
 <div class="sec-title">🎉 العروض الحالية</div>
@@ -146,6 +146,7 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
       </div>
       <div class="fg"><label>الاسم *</label><input id="fName" placeholder="اسمك الكريم"></div>
       <div class="fg"><label>التليفون *</label><input id="fPhone" type="tel" placeholder="01XXXXXXXXX"></div>
+      <div class="fg"><label>المحافظة / المدينة *</label><input id="fCity" placeholder="مثال: القاهرة، الإسكندرية، المنصورة..."></div>
       <div class="fg" id="fAddrG"><label>العنوان *</label><input id="fAddr" placeholder="الشارع والمنطقة"></div>
       <div class="fg"><label>ملاحظات</label><textarea id="fNotes" placeholder="أي تفاصيل للطلب..."></textarea></div>
       <button class="wa-btn" onclick="sendOrder()">
@@ -297,14 +298,16 @@ function sendOrder() {
   const name=document.getElementById('fName').value.trim();
   const phone=document.getElementById('fPhone').value.trim();
   const addr=document.getElementById('fAddr').value.trim();
+  const city=document.getElementById('fCity').value.trim();
   const notes=document.getElementById('fNotes').value.trim();
   if(!name){alert('من فضلك ادخل اسمك');return}
   if(!phone){alert('من فضلك ادخل التليفون');return}
+  if(!city){alert('من فضلك ادخل المحافظة');return}
   if(orderType==='delivery'&&!addr){alert('من فضلك ادخل العنوان');return}
   if(!Object.keys(cart).length){alert('السلة فاضية!');return}
   const items=Object.values(cart);let tot=0;
   const lines=items.map(i=>{tot+=i.qty*i.price;return`• ${i.name} × ${i.qty} = ${i.qty*i.price} ج`}).join('\n');
-  let msg=`🍜 *طلب جديد — كشري دقة*\n\n👤 ${name}\n📞 ${phone}\n🚚 ${orderType==='delivery'?'توصيل':'استلام'}\n`;
+  let msg=`🍜 *طلب جديد — كشري دقة*\n\n👤 ${name}\n📞 ${phone}\n🏙️ ${city}\n🚚 ${orderType==='delivery'?'توصيل':'استلام'}\n`;
   if(orderType==='delivery')msg+=`📍 ${addr}\n`;
   if(notes)msg+=`📝 ${notes}\n`;
   msg+=`\n🧾 *الطلب:*\n${lines}\n\n💰 *الإجمالي: ${tot} ج*\n💵 كاش عند الاستلام`;
