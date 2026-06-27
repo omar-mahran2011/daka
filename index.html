@@ -9,8 +9,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--or:#E84800;--ord:#C03A00;--orl:#FF6B2B;--red:#CC1100;--cr:#FFF5F0;--dk:#1A0800}
 body{font-family:'Cairo',sans-serif;background:var(--cr);color:var(--dk);overflow-x:hidden;min-height:100vh}
-
-/* LOADER */
 #loader{position:fixed;inset:0;background:#1A0800;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
 #loader.out{opacity:0;visibility:hidden;pointer-events:none}
 .loader-scene{position:relative;width:170px;height:130px}
@@ -26,15 +24,10 @@ body{font-family:'Cairo',sans-serif;background:var(--cr);color:var(--dk);overflo
 .ld-dots span:nth-child(2){animation-delay:.22s}
 .ld-dots span:nth-child(3){animation-delay:.44s}
 @keyframes ldot{0%{transform:translateY(0);opacity:.3}100%{transform:translateY(-9px);opacity:1}}
-
-/* HEADER */
 header{background:var(--or);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 14px rgba(0,0,0,.28)}
 .logo{color:#fff;font-size:22px;font-weight:900;line-height:1}
 .logo small{display:block;font-size:11px;font-weight:400;opacity:.8;margin-top:1px}
-.hdr-right{display:flex;gap:8px;align-items:center}
-.hdr-btn{color:#fff;font-size:12px;font-weight:700;text-decoration:none;background:rgba(255,255,255,.18);padding:7px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.28);cursor:pointer;font-family:'Cairo',sans-serif}
-
-/* HERO */
+.hdr-btn{color:#fff;font-size:12px;font-weight:700;text-decoration:none;background:rgba(255,255,255,.18);padding:7px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.28)}
 .hero{background:linear-gradient(155deg,var(--ord) 0%,var(--or) 55%,var(--orl) 100%);padding:38px 18px 32px;text-align:center;position:relative;overflow:hidden}
 .hero::before,.hero::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.06)}
 .hero::before{width:280px;height:280px;top:-110px;left:-70px}
@@ -43,29 +36,23 @@ header{background:var(--or);padding:14px 18px;display:flex;align-items:center;ju
 .hero h2{color:#fff;font-size:38px;font-weight:900;line-height:1.1;animation:fuD .6s .1s ease both;text-shadow:0 2px 12px rgba(0,0,0,.2)}
 .hero-sub{color:rgba(255,255,255,.88);font-size:14px;margin-top:8px;animation:fuD .6s .2s ease both}
 @keyframes fuD{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
-/* OFFERS */
 .sec-title{font-size:20px;font-weight:900;color:var(--ord);padding:22px 16px 12px;display:flex;align-items:center;gap:10px}
 .sec-title::after{content:'';flex:1;height:2px;background:linear-gradient(to left,transparent,var(--or));opacity:.22}
 .offers-row{display:flex;gap:14px;overflow-x:auto;padding:0 16px 16px;scrollbar-width:none}
 .offers-row::-webkit-scrollbar{display:none}
-.offer-card{flex-shrink:0;width:270px;border-radius:20px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.13);position:relative;animation:fuD .5s ease both;background:#fff}
+.offer-card{flex-shrink:0;width:270px;border-radius:20px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.13);position:relative;background:#fff}
 .offer-img{width:100%;height:150px;object-fit:cover;display:block}
 .offer-ph{width:100%;height:150px;display:flex;align-items:center;justify-content:center;font-size:44px}
-.offer-disc{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:16px;font-weight:900;padding:5px 9px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.offer-disc{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:16px;font-weight:900;padding:5px 9px;border-radius:10px}
 .offer-body{padding:13px}
 .offer-bdg{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:14px;color:#fff;margin-bottom:5px}
 .offer-name{font-size:15px;font-weight:900;color:var(--dk)}
 .offer-desc{font-size:12px;color:#888;margin-top:3px;line-height:1.5}
-
-/* TABS */
 .tabs-wrap{position:sticky;top:54px;z-index:90;background:var(--cr);padding:8px 0 6px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:0 16px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab-btn{flex-shrink:0;padding:7px 15px;border:2px solid var(--or);border-radius:26px;background:#fff;color:var(--or);font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
 .tab-btn.active,.tab-btn:hover{background:var(--or);color:#fff}
-
-/* MENU */
 main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
 .msec-title{font-size:19px;font-weight:900;color:var(--ord);padding:18px 0 10px;display:flex;align-items:center;gap:8px}
 .item-card{background:#fff;border-radius:16px;display:flex;align-items:stretch;margin-bottom:9px;overflow:hidden;box-shadow:0 2px 8px rgba(232,72,0,.07);border:1.5px solid transparent;transition:border-color .2s,transform .25s,box-shadow .25s;opacity:0;transform:translateY(14px)}
@@ -81,13 +68,9 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
 .item-price{font-size:15px;font-weight:900;color:var(--or);margin-top:4px}
 .item-img{width:86px;min-width:86px;height:86px;object-fit:cover;display:block}
 .item-ph{width:86px;min-width:86px;height:86px;background:linear-gradient(135deg,#ffe8dd,#ffd0bd);display:flex;align-items:center;justify-content:center;font-size:26px}
-
-/* CART FLOAT */
 .cart-float{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--or);color:#fff;border:none;border-radius:50px;padding:13px 26px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 28px rgba(232,72,0,.48);display:flex;align-items:center;gap:9px;z-index:200;transition:opacity .3s,transform .3s;white-space:nowrap}
 .cart-float.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(18px)}
 .cart-cnt{background:#fff;color:var(--or);border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
-
-/* CART PANEL */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:300;display:none;backdrop-filter:blur(2px)}
 .overlay.open{display:block}
 .cart-panel{position:fixed;bottom:0;left:0;right:0;background:#fff;border-radius:26px 26px 0 0;padding:18px 18px 28px;z-index:400;max-height:88vh;overflow-y:auto;transform:translateY(100%);transition:transform .38s cubic-bezier(.34,1.56,.64,1);max-width:720px;margin:0 auto}
@@ -118,17 +101,11 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
 .wa-btn:hover{background:#1ebe5a;transform:scale(1.02)}
 .empty-cart{text-align:center;padding:28px 0;color:#ccc}
 .empty-cart .big{font-size:42px;margin-bottom:6px}
-
-/* LOADING STATE */
-.loading-menu{text-align:center;padding:40px;color:#bbb}
-.loading-menu .spin{font-size:36px;animation:spin 1s linear infinite;display:block;margin-bottom:10px}
-@keyframes spin{to{transform:rotate(360deg)}}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--or);color:#fff;padding:11px 26px;border-radius:28px;font-size:13px;font-weight:700;z-index:9999;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
-
 <div id="loader">
   <div class="loader-scene">
     <div class="can can-s">🍅<span class="can-lbl">SALSA</span></div>
@@ -138,26 +115,19 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
   <div class="ld-sub">بنجهز لك المنيو...</div>
   <div class="ld-dots"><span></span><span></span><span></span></div>
 </div>
-
 <header>
   <div class="logo">كشري دقة<small>شبين الكوم — اطلب أونلاين</small></div>
-  <div class="hdr-right">
-    <a href="tel:01050530505" class="hdr-btn">📞 اتصل</a>
-  </div>
+  <a href="tel:01050530505" class="hdr-btn">📞 اتصل</a>
 </header>
-
 <div class="hero">
   <div class="hero-badge">🔥 اطلب أونلاين دلوقتي</div>
   <h2>أحلى كشري<br>في شبين</h2>
   <div class="hero-sub">طازج ⚡ سريع ⚡ بيوصلك على بابك</div>
 </div>
-
 <div class="sec-title">🎉 العروض الحالية</div>
-<div class="offers-row" id="offersRow"><div class="loading-menu"><span class="spin">🔄</span></div></div>
-
+<div class="offers-row" id="offersRow"></div>
 <div class="tabs-wrap"><div class="tabs" id="tabsEl"></div></div>
-<main id="menuEl"><div class="loading-menu"><span class="spin">🔄</span>جاري تحميل المنيو...</div></main>
-
+<main id="menuEl"></main>
 <button class="cart-float hidden" id="cartFloat" onclick="openCart()">
   🛒 <span id="cfText">السلة</span><span class="cart-cnt" id="cfCount">0</span>
 </button>
@@ -186,39 +156,45 @@ main{padding:6px 14px 150px;max-width:720px;margin:0 auto}
   </div>
 </div>
 <div class="toast" id="toast"></div>
-
 <script>
-const WA = '201050530505';
+const WA='201050530505';
+const SB_URL='https://gvzyuyctifgzrigvaypn.supabase.co';
+const SB_KEY='sb_publishable_2yP0Dh-BwygFetbUfCVPSQ_3sCi7g-p';
 
 const DEFAULT_MENU=[{section:"كشري",emoji:"🍜",items:[{id:"k1",name:"كشري بريمو",price:30,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k2",name:"كشري ميجا",price:35,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k3",name:"كشري دقة",price:40,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k4",name:"كشري لارج",price:45,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k5",name:"كشري أكس لارج",price:55,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k6",name:"كشري جامبو",price:65,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k7",name:"كشري شاورما فراخ",price:75,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k8",name:"كشري كبدة",price:55,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k9",name:"كشري سجق",price:55,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k10",name:"كشري لحمة",price:55,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"},{id:"k11",name:"كشري فراخ",price:65,img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80"}]},{section:"طواجن",emoji:"🥘",items:[{id:"t1",name:"طاجن مكرونة سادة",price:35,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t2",name:"طاجن مكرونة سادة موتزاريلا",price:55,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t3",name:"طاجن مكرونة لحمة",price:55,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t4",name:"طاجن مكرونة لحمة موتزاريلا",price:75,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t5",name:"طاجن مكرونة فراخ",price:65,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t6",name:"طاجن مكرونة فراخ موتزاريلا",price:85,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t7",name:"طاجن مكرونة شاورما فراخ",price:75,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"},{id:"t8",name:"طاجن مكرونة شاورما فراخ موتزاريلا",price:95,img:"https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"}]},{section:"شاورما",emoji:"🌯",items:[{id:"sh1",name:"شاورما فراخ كايزر",price:45,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"},{id:"sh2",name:"شاورما فراخ فرنساوي",price:80,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"},{id:"sh3",name:"شاورما فراخ صاج",price:75,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"},{id:"sh4",name:"شاورما فراخ صاج موتزاريلا",price:90,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"},{id:"sh5",name:"كشري شاورما ويتش",price:60,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"},{id:"sh6",name:"وجبة عربي",price:100,img:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80"}]},{section:"كومبو التوفير",emoji:"🎁",items:[{id:"c1",name:"كومبو 1 — كشري ميجا + كانز + أرز بلبن",price:85,img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"},{id:"c2",name:"كومبو 2 — طاجن لحمة + كانز + أرز بلبن",price:105,img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"},{id:"c3",name:"كومبو 3 — طاجن فراخ + كانز + أرز بلبن",price:115,img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"},{id:"c4",name:"كومبو 4 — طاجن شاورما فراخ + كانز + أرز بلبن",price:125,img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80"}]},{section:"الحلو",emoji:"🍮",items:[{id:"h1",name:"أرز باللبن عادي",price:25,img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=80"},{id:"h2",name:"أرز باللبن فرن",price:25,img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=80"},{id:"h3",name:"أرز باللبن بسبوسة",price:30,img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&q=80"}]},{section:"مشروبات",emoji:"🥤",items:[{id:"dr1",name:"مياه معدنية",price:10,img:""},{id:"dr2",name:"كانز بيبسي/سفن/ميرندا",price:20,img:""},{id:"dr3",name:"في كولا",price:25,img:""}]},{section:"إضافات",emoji:"➕",items:[{id:"ex1",name:"دقة",price:5,img:""},{id:"ex2",name:"شطة زيت",price:7,img:""},{id:"ex3",name:"حمص",price:10,img:""},{id:"ex4",name:"عدس",price:10,img:""},{id:"ex5",name:"تقلية",price:10,img:""},{id:"ex6",name:"صلصة",price:10,img:""},{id:"ex7",name:"سلطة خضراء",price:10,img:""},{id:"ex8",name:"قراميشو",price:10,img:""},{id:"ex9",name:"تومية",price:10,img:""},{id:"ex10",name:"خيار مخلل",price:10,img:""}]}];
-const DEFAULT_OFFERS=[{id:"o1",title:"خصم 25% على كل المنيو",desc:"احتفالاً بافتتاح الموقع — الخصم سارى على كل الطلبات",discount:"25%",badge:"🎊 عرض الافتتاح",img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",color:"#E84800"},{id:"o2",title:"كومبو العيلة",desc:"3 كشري لارج + 3 عصائر بسعر خيالي",discount:"20%",badge:"🔥 الأكثر طلباً",img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",color:"#CC1100"}];
+const DEFAULT_OFFERS=[{id:"o1",title:"خصم 25% على كل المنيو",desc:"احتفالاً بافتتاح الموقع",discount:"25%",badge:"🎊 عرض الافتتاح",img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",color:"#E84800"},{id:"o2",title:"كومبو العيلة",desc:"3 كشري لارج + 3 عصائر بسعر خيالي",discount:"20%",badge:"🔥 الأكثر طلباً",img:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",color:"#CC1100"}];
 
-let menu = [], offers = [], cart = {}, orderType = 'delivery';
+let menu=[], offers=[], cart={}, orderType='delivery';
 
-function loadData() {
-  try { menu = JSON.parse(localStorage.getItem('dakka_menu')) || DEFAULT_MENU; } catch(e) { menu = DEFAULT_MENU; }
-  try { offers = JSON.parse(localStorage.getItem('dakka_offers')) || DEFAULT_OFFERS; } catch(e) { offers = DEFAULT_OFFERS; }
+async function sbGet(table) {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?id=eq.main`, {
+      headers: {'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}`}
+    });
+    const d = await r.json();
+    return d && d[0] ? d[0].data : null;
+  } catch(e) { return null; }
 }
 
-setTimeout(() => {
-  loadData();
-  renderTabs(); renderMenu(); setTimeout(setupReveal, 100);
-  renderOffers();
-  document.getElementById('loader').classList.add('out');
-}, 2200);
+async function loadData() {
+  const [m, o] = await Promise.all([sbGet('menu'), sbGet('offers')]);
+  menu = (m && m.length) ? m : DEFAULT_MENU;
+  offers = (o && o.length) ? o : DEFAULT_OFFERS;
+}
 
-// استمع للتغييرات من الأدمن في نفس المتصفح
-window.addEventListener('storage', e => {
-  if(e.key === 'dakka_menu') { try { menu = JSON.parse(e.newValue) || DEFAULT_MENU; } catch(err) {} renderTabs(); renderMenu(); setTimeout(setupReveal, 100); }
-  if(e.key === 'dakka_offers') { try { offers = JSON.parse(e.newValue) || DEFAULT_OFFERS; } catch(err) {} renderOffers(); }
+window.addEventListener('load', async () => {
+  await loadData();
+  renderTabs(); renderMenu(); renderOffers();
+  setTimeout(setupReveal, 100);
+  document.getElementById('loader').classList.add('out');
 });
 
 function renderOffers() {
-  const c = document.getElementById('offersRow');
-  if (!offers.length) { c.innerHTML = '<p style="padding:0 16px;color:#bbb;font-size:13px">مفيش عروض دلوقتي</p>'; return; }
-  c.innerHTML = offers.map((o,i) => `
-    <div class="offer-card" style="animation-delay:${i*.1}s">
-      ${o.img ? `<img class="offer-img" src="${o.img}" onerror="this.style.display='none'">` : ''}
+  const c=document.getElementById('offersRow');
+  if(!offers.length){c.innerHTML='<p style="padding:0 16px;color:#bbb;font-size:13px">مفيش عروض دلوقتي</p>';return}
+  c.innerHTML=offers.map((o,i)=>`
+    <div class="offer-card" style="animation:fuD .5s ease ${i*.1}s both">
+      ${o.img?`<img class="offer-img" src="${o.img}" onerror="this.style.display='none'">`:``}
       <div class="offer-ph" style="${o.img?'display:none':''}background:${o.color||'#E84800'}">🎁</div>
       <div class="offer-disc">${o.discount||''}</div>
       <div class="offer-body">
@@ -230,15 +206,15 @@ function renderOffers() {
 }
 
 function renderTabs() {
-  document.getElementById('tabsEl').innerHTML = menu.map((s,i) =>
+  document.getElementById('tabsEl').innerHTML=menu.map((s,i)=>
     `<button class="tab-btn${i===0?' active':''}" onclick="goSec('sec${i}',this)">${s.emoji} ${s.section}</button>`).join('');
 }
 
 function renderMenu() {
-  document.getElementById('menuEl').innerHTML = menu.map((s,si) => `
+  document.getElementById('menuEl').innerHTML=menu.map((s,si)=>`
     <div id="sec${si}">
       <div class="msec-title">${s.emoji} ${s.section}</div>
-      ${s.items.map(it => `
+      ${s.items.map(it=>`
         <div class="item-card" id="card${it.id}">
           <div class="qty-col">
             <button class="qty-btn" onclick="chQty('${it.id}',-1)">−</button>
@@ -249,75 +225,75 @@ function renderMenu() {
             <div class="item-name">${it.name}</div>
             <div class="item-price">${it.price} ج</div>
           </div>
-          ${it.img ? `<img class="item-img" src="${it.img}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="item-ph" style="display:none">${s.emoji}</div>` : `<div class="item-ph">${s.emoji}</div>`}
+          ${it.img?`<img class="item-img" src="${it.img}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="item-ph" style="display:none">${s.emoji}</div>`:`<div class="item-ph">${s.emoji}</div>`}
         </div>`).join('')}
     </div>`).join('');
 }
 
 function setupReveal() {
-  const obs = new IntersectionObserver(es => { es.forEach(e => { if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)} }) }, {threshold:.1});
-  document.querySelectorAll('.item-card').forEach(c => obs.observe(c));
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.item-card').forEach(c=>obs.observe(c));
 }
 
-window.goSec = (id,btn) => {
+function goSec(id,btn) {
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});
-};
-
-window.chQty = (id, d) => {
-  let it = null;
-  for(const s of menu) for(const i of s.items) if(i.id===id) it=i;
-  if(!it) return;
-  if(!cart[id]) cart[id]={...it,qty:0};
-  cart[id].qty += d;
-  if(cart[id].qty <= 0) delete cart[id];
-  const el = document.getElementById('q'+id); if(el) el.textContent = cart[id]?.qty||0;
-  updFloat();
-  if(document.getElementById('cartPanel').classList.contains('open')) renderCItems();
-};
-
-function updFloat() {
-  const tot = Object.values(cart).reduce((s,i)=>s+i.qty,0);
-  const pr = Object.values(cart).reduce((s,i)=>s+i.qty*i.price,0);
-  document.getElementById('cfCount').textContent = tot;
-  document.getElementById('cfText').textContent = `السلة · ${pr} ج`;
-  document.getElementById('cartFloat').classList.toggle('hidden', tot===0);
 }
 
-window.openCart = () => { document.getElementById('overlay').classList.add('open'); document.getElementById('cartPanel').classList.add('open'); renderCItems(); };
-window.closeCart = () => { document.getElementById('overlay').classList.remove('open'); document.getElementById('cartPanel').classList.remove('open'); };
+function findIt(id){for(const s of menu)for(const i of s.items)if(i.id===id)return i;return null}
+
+function chQty(id,d) {
+  const it=findIt(id);if(!it)return;
+  if(!cart[id])cart[id]={...it,qty:0};
+  cart[id].qty+=d;
+  if(cart[id].qty<=0)delete cart[id];
+  const el=document.getElementById('q'+id);if(el)el.textContent=cart[id]?.qty||0;
+  updFloat();
+  if(document.getElementById('cartPanel').classList.contains('open'))renderCItems();
+}
+
+function updFloat() {
+  const tot=Object.values(cart).reduce((s,i)=>s+i.qty,0);
+  const pr=Object.values(cart).reduce((s,i)=>s+i.qty*i.price,0);
+  document.getElementById('cfCount').textContent=tot;
+  document.getElementById('cfText').textContent=`السلة · ${pr} ج`;
+  document.getElementById('cartFloat').classList.toggle('hidden',tot===0);
+}
+
+function openCart(){document.getElementById('overlay').classList.add('open');document.getElementById('cartPanel').classList.add('open');renderCItems()}
+function closeCart(){document.getElementById('overlay').classList.remove('open');document.getElementById('cartPanel').classList.remove('open')}
 
 function renderCItems() {
-  const items = Object.entries(cart);
-  const el = document.getElementById('cartItemsEl');
-  const empty = document.getElementById('emptyCart');
-  const sum = document.getElementById('cartSum');
+  const items=Object.entries(cart);
+  const el=document.getElementById('cartItemsEl');
+  const empty=document.getElementById('emptyCart');
+  const sum=document.getElementById('cartSum');
   if(!items.length){el.innerHTML='';empty.style.display='block';sum.style.display='none';return}
-  empty.style.display='none'; sum.style.display='block';
+  empty.style.display='none';sum.style.display='block';
   let tot=0;
-  el.innerHTML = items.map(([id,it])=>{
-    const s=it.qty*it.price; tot+=s;
-    return `<div class="ci">
+  el.innerHTML=items.map(([id,it])=>{
+    const s=it.qty*it.price;tot+=s;
+    return`<div class="ci">
       ${it.img?`<img class="ci-img" src="${it.img}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ci-ph" style="display:none">🍜</div>`:`<div class="ci-ph">🍜</div>`}
       <div class="ci-info"><div class="ci-name">${it.name}</div><div class="ci-sub">${it.qty} × ${it.price} ج</div></div>
       <div class="ci-price">${s} ج</div>
       <button class="ci-rm" onclick="rmItem('${id}')">✕</button>
     </div>`;
   }).join('');
-  document.getElementById('cartTotal').textContent = tot+' ج';
+  document.getElementById('cartTotal').textContent=tot+' ج';
 }
 
-window.rmItem = id => { const el=document.getElementById('q'+id); if(el)el.textContent=0; delete cart[id]; updFloat(); renderCItems(); };
+function rmItem(id){const el=document.getElementById('q'+id);if(el)el.textContent=0;delete cart[id];updFloat();renderCItems()}
 
-window.setType = t => {
+function setType(t) {
   orderType=t;
   document.getElementById('btnD').classList.toggle('active',t==='delivery');
   document.getElementById('btnP').classList.toggle('active',t==='pickup');
-  document.getElementById('fAddrG').style.display = t==='delivery'?'block':'none';
-};
+  document.getElementById('fAddrG').style.display=t==='delivery'?'block':'none';
+}
 
-window.sendOrder = () => {
+function sendOrder() {
   const name=document.getElementById('fName').value.trim();
   const phone=document.getElementById('fPhone').value.trim();
   const addr=document.getElementById('fAddr').value.trim();
@@ -326,17 +302,17 @@ window.sendOrder = () => {
   if(!phone){alert('من فضلك ادخل التليفون');return}
   if(orderType==='delivery'&&!addr){alert('من فضلك ادخل العنوان');return}
   if(!Object.keys(cart).length){alert('السلة فاضية!');return}
-  const items=Object.values(cart); let tot=0;
+  const items=Object.values(cart);let tot=0;
   const lines=items.map(i=>{tot+=i.qty*i.price;return`• ${i.name} × ${i.qty} = ${i.qty*i.price} ج`}).join('\n');
   let msg=`🍜 *طلب جديد — كشري دقة*\n\n👤 ${name}\n📞 ${phone}\n🚚 ${orderType==='delivery'?'توصيل':'استلام'}\n`;
-  if(orderType==='delivery') msg+=`📍 ${addr}\n`;
-  if(notes) msg+=`📝 ${notes}\n`;
+  if(orderType==='delivery')msg+=`📍 ${addr}\n`;
+  if(notes)msg+=`📝 ${notes}\n`;
   msg+=`\n🧾 *الطلب:*\n${lines}\n\n💰 *الإجمالي: ${tot} ج*\n💵 كاش عند الاستلام`;
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
-};
+}
 
-let tTimer;
-window.showToast = msg => { const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(tTimer); tTimer=setTimeout(()=>el.classList.remove('show'),2500); };
+let tT;
+function showToast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>el.classList.remove('show'),2500)}
 </script>
 </body>
 </html>
